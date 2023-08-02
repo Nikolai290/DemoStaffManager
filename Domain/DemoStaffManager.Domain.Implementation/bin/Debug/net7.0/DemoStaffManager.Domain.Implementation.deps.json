@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "DemoStaffManager.Domain.Implementation/1.0.0": {
+        "dependencies": {
+          "DemoStaffManager.Domain.Abstracts": "1.0.0"
+        },
+        "runtime": {
+          "DemoStaffManager.Domain.Implementation.dll": {}
+        }
+      },
+      "DemoStaffManager.Domain.Abstracts/1.0.0": {
+        "dependencies": {
+          "DemoStaffManager.Domain.Core": "1.0.0"
+        },
+        "runtime": {
+          "DemoStaffManager.Domain.Abstracts.dll": {}
+        }
+      },
+      "DemoStaffManager.Domain.Core/1.0.0": {
+        "runtime": {
+          "DemoStaffManager.Domain.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DemoStaffManager.Domain.Implementation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DemoStaffManager.Domain.Abstracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DemoStaffManager.Domain.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

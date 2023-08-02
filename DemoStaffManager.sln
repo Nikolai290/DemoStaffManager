@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{3C57B06B-C650-4632-90F1-418E1CEE3FBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{4616AB36-E783-4878-9D16-3C683A3F7A93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Domain.Core", "Domain\DemoStaffManager.Domain.Core\DemoStaffManager.Domain.Core.csproj", "{12A27AD0-B663-4098-AA31-34883BAE20C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9D61623E-F7E2-44AC-9AE2-DF978EBB5399}"
+	ProjectSection(SolutionItems) = preProject
+		Tests\DemoStaffManager.Core.Tests\DemoStaffManager.Core.Tests.csproj = Tests\DemoStaffManager.Core.Tests\DemoStaffManager.Core.Tests.csproj
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{D0BA61AB-83E0-4C2B-82FE-A7B8DEF8E5C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Domain.Abstracts", "Domain\DemoStaffManager.Domain.Abstracts\DemoStaffManager.Domain.Abstracts.csproj", "{B4DFBA51-AB82-448C-8934-9E4C40420DAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Business.Abstracts", "Business\DemoStaffManager.Business.Abstracts\DemoStaffManager.Business.Abstracts.csproj", "{998A680C-A918-43BF-A52B-C99519513547}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Business.DataTransferObjects", "Business\DemoStaffManager.Business.DataTransferObjects\DemoStaffManager.Business.DataTransferObjects.csproj", "{11EFF014-D263-434E-B1E2-8BA5E5B5CEAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Business.Implementation", "Business\DemoStaffManager.Business.Implementation\DemoStaffManager.Business.Implementation.csproj", "{045D3F0A-926E-4145-8EA4-33C8C125E824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Domain.Implementation", "Domain\DemoStaffManager.Domain.Implementation\DemoStaffManager.Domain.Implementation.csproj", "{E4B0B65B-02D9-4E43-94A4-850306C32594}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C57B06B-C650-4632-90F1-418E1CEE3FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C57B06B-C650-4632-90F1-418E1CEE3FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C57B06B-C650-4632-90F1-418E1CEE3FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C57B06B-C650-4632-90F1-418E1CEE3FBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12A27AD0-B663-4098-AA31-34883BAE20C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12A27AD0-B663-4098-AA31-34883BAE20C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12A27AD0-B663-4098-AA31-34883BAE20C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12A27AD0-B663-4098-AA31-34883BAE20C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4DFBA51-AB82-448C-8934-9E4C40420DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4DFBA51-AB82-448C-8934-9E4C40420DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4DFBA51-AB82-448C-8934-9E4C40420DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4DFBA51-AB82-448C-8934-9E4C40420DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{998A680C-A918-43BF-A52B-C99519513547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998A680C-A918-43BF-A52B-C99519513547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998A680C-A918-43BF-A52B-C99519513547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998A680C-A918-43BF-A52B-C99519513547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11EFF014-D263-434E-B1E2-8BA5E5B5CEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11EFF014-D263-434E-B1E2-8BA5E5B5CEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11EFF014-D263-434E-B1E2-8BA5E5B5CEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11EFF014-D263-434E-B1E2-8BA5E5B5CEAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{045D3F0A-926E-4145-8EA4-33C8C125E824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{045D3F0A-926E-4145-8EA4-33C8C125E824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{045D3F0A-926E-4145-8EA4-33C8C125E824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{045D3F0A-926E-4145-8EA4-33C8C125E824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4B0B65B-02D9-4E43-94A4-850306C32594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4B0B65B-02D9-4E43-94A4-850306C32594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4B0B65B-02D9-4E43-94A4-850306C32594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4B0B65B-02D9-4E43-94A4-850306C32594}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12A27AD0-B663-4098-AA31-34883BAE20C4} = {4616AB36-E783-4878-9D16-3C683A3F7A93}
+		{B4DFBA51-AB82-448C-8934-9E4C40420DAD} = {4616AB36-E783-4878-9D16-3C683A3F7A93}
+		{998A680C-A918-43BF-A52B-C99519513547} = {D0BA61AB-83E0-4C2B-82FE-A7B8DEF8E5C8}
+		{11EFF014-D263-434E-B1E2-8BA5E5B5CEAB} = {D0BA61AB-83E0-4C2B-82FE-A7B8DEF8E5C8}
+		{045D3F0A-926E-4145-8EA4-33C8C125E824} = {D0BA61AB-83E0-4C2B-82FE-A7B8DEF8E5C8}
+		{E4B0B65B-02D9-4E43-94A4-850306C32594} = {4616AB36-E783-4878-9D16-3C683A3F7A93}
+	EndGlobalSection
+EndGlobal

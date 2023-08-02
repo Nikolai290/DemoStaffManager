@@ -1,0 +1,17 @@
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\bin\Debug\net7.0\DemoStaffManager.Domain.Implementation.deps.json
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\bin\Debug\net7.0\DemoStaffManager.Domain.Implementation.dll
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\bin\Debug\net7.0\DemoStaffManager.Domain.Implementation.pdb
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\bin\Debug\net7.0\DemoStaffManager.Domain.Abstracts.dll
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\bin\Debug\net7.0\DemoStaffManager.Domain.Core.dll
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\bin\Debug\net7.0\DemoStaffManager.Domain.Abstracts.pdb
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\bin\Debug\net7.0\DemoStaffManager.Domain.Core.pdb
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\obj\Debug\net7.0\DemoStaffManager.Domain.Implementation.csproj.AssemblyReference.cache
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\obj\Debug\net7.0\DemoStaffManager.Domain.Implementation.GeneratedMSBuildEditorConfig.editorconfig
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\obj\Debug\net7.0\DemoStaffManager.Domain.Implementation.AssemblyInfoInputs.cache
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\obj\Debug\net7.0\DemoStaffManager.Domain.Implementation.AssemblyInfo.cs
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\obj\Debug\net7.0\DemoStaffManager.Domain.Implementation.csproj.CoreCompileInputs.cache
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\obj\Debug\net7.0\DemoStaffManager.Domain.Implementation.csproj.CopyComplete
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\obj\Debug\net7.0\DemoStaffManager.Domain.Implementation.dll
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\obj\Debug\net7.0\refint\DemoStaffManager.Domain.Implementation.dll
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\obj\Debug\net7.0\DemoStaffManager.Domain.Implementation.pdb
+D:\REPOS\DemoStaffManager\Domain\DemoStaffManager.Domain.Implementation\obj\Debug\net7.0\ref\DemoStaffManager.Domain.Implementation.dll
