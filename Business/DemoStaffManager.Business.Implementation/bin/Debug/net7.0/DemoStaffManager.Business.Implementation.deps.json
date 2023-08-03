@@ -9,7 +9,9 @@
       "DemoStaffManager.Business.Implementation/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "DemoStaffManager.Business.Abstracts": "1.0.0"
+          "DemoStaffManager.Business.Abstracts": "1.0.0",
+          "DemoStaffManager.Domain.Abstracts": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0.0"
         },
         "runtime": {
           "DemoStaffManager.Business.Implementation.dll": {}
@@ -44,9 +46,25 @@
           "DemoStaffManager.Business.DataTransferObjects.dll": {}
         }
       },
+      "DemoStaffManager.Domain.Abstracts/1.0.0": {
+        "dependencies": {
+          "DemoStaffManager.Domain.Core": "1.0.0"
+        },
+        "runtime": {
+          "DemoStaffManager.Domain.Abstracts.dll": {}
+        }
+      },
       "DemoStaffManager.Domain.Core/1.0.0": {
         "runtime": {
           "DemoStaffManager.Domain.Core.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/7.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
         }
       }
     }
@@ -81,8 +99,18 @@
       "serviceable": false,
       "sha512": ""
     },
+    "DemoStaffManager.Domain.Abstracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "DemoStaffManager.Domain.Core/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Logging.Abstractions/7.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

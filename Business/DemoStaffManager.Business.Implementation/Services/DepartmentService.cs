@@ -1,6 +1,8 @@
-﻿using DemoStaffManager.Business.Abstracts.Services;
+﻿using AutoMapper;
+using DemoStaffManager.Business.Abstracts.Services;
 using DemoStaffManager.Business.DataTransferObjects;
 using DemoStaffManager.Domain.Abstracts.Repositories;
+using DemoStaffManager.Domain.Core.DbEntities;
 using Microsoft.Extensions.Logging;
 
 namespace DemoStaffManager.Business.Implementation.Services;
@@ -9,33 +11,48 @@ public class DepartmentService : IDepartmentService
 {
     private readonly ILogger<DepartmentService> _logger;
     private readonly IDepartmentRepository _departmentRepository;
+    private readonly IMapper _mapper;
 
     public DepartmentService(ILogger<DepartmentService> logger,
-        IDepartmentRepository departmentRepository)
+        IDepartmentRepository departmentRepository,
+        IMapper mapper)
     {
         _logger = logger;
         _departmentRepository = departmentRepository;
+        _mapper = mapper;
     }
     
     
-    public async Task<IEnumerable<DepartmentOutDto>> GetAllAsync(int skip, int limit, CancellationToken cancellationToken)
+    public async Task<IEnumerable<DepartmentOutDto>> GetAllAsync(CancellationToken cancellationToken)
     {
-        var depart
-        return new List<DepartmentOutDto>(0);
+        var queryResult = await _departmentRepository.GetAllAsync(cancellationToken);
+
+        var resultDtos = _mapper.Map<IEnumerable<DepartmentOutDto>>(queryResult);
+        
+        return resultDtos;
     }
 
-    public Task CreateAsync(CreateDepartmentDto createDto, CancellationToken cancellationToken)
+    public async Task<DepartmentOutDto> CreateAsync(CreateDepartmentDto createDto, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var newEntity = _mapper.Map<Department>(createDto);
+        var resultEntity = await _departmentRepository.CreateAsync(newEntity, cancellationToken);
+        var resultDto = _mapper.Map<DepartmentOutDto>(resultEntity);
+        
+        return resultDto;
     }
 
-    public Task UpdateAsync(int id, UpdateDepartmentDto updateDto, CancellationToken cancellationToken)
+    public async Task<DepartmentOutDto> UpdateAsync(int id, UpdateDepartmentDto updateDto, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var entity = await _departmentRepository.GetAsync(id, cancellationToken);
+        _mapper.Map(updateDto, entity);
+        var resultEntity = await _departmentRepository.UpdateAsync(entity, cancellationToken);
+        var resultDto = _mapper.Map<DepartmentOutDto>(resultEntity);
+        
+        return resultDto;
     }
 
-    public Task DeleteAsync(int id, CancellationToken cancellationToken)
+    public async Task DeleteAsync(int id, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        await _departmentRepository.DeleteAsync(id, cancellationToken);
     }
 }

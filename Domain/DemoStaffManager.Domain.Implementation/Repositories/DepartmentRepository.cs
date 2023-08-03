@@ -5,59 +5,51 @@ using Microsoft.Extensions.Logging;
 
 namespace DemoStaffManager.Domain.Implementation.Repositories;
 
-public class DepartmentRepository : IDepartmentRepository
+public class DepartmentRepository : BaseRepository, IDepartmentRepository, IBaseRepository
 {
-    private readonly MsSqlContext _msSqlContext;
     private readonly ILogger<DepartmentRepository> _logger;
 
     public DepartmentRepository(MsSqlContext msSqlContext,
-        ILogger<DepartmentRepository> logger)
+        ILogger<DepartmentRepository> logger) : base(msSqlContext, logger)
     {
-        _msSqlContext = msSqlContext;
-        _logger = logger;
     }
     
-    public async Task<IEnumerable<Department>> GetListAsync(Predicate<Department> match = null, int skip = 0, int limit = 0)
+    public async Task<IEnumerable<Department>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        return match == null ?
-            _msSqlContext.Departments.Skip(skip).Take(limit) :
-            _msSqlContext.Departments.Where(item => match(item)).Skip(skip).Take(limit);
-    }
+        var result = _msSqlContext.Departments;
 
-    public Task<Department> GetAsync(int id)
-    {
-        return _msSqlContext.Departments.SingleAsync(item => item.Id == id);
-    }
-
-    public Department CreateAsync(Department obj)
-    {
-        return _msSqlContext.Departments.AddAsync(obj).Result.Entity;
-    }
-
-    public Task CreateRangeAsync(IEnumerable<Department> list)
-    {
-        var result = _msSqlContext.Departments.AddRangeAsync(list);
         return result;
     }
 
-    public Department Update(Department obj)
+    public Task<Department> GetAsync(int id, CancellationToken cancellationToken)
+    {
+        return _msSqlContext.Departments.SingleAsync(item => item.Id == id, cancellationToken);
+    }
+
+    public async Task<Department> CreateAsync(Department obj, CancellationToken cancellationToken)
+    {
+        var result = await _msSqlContext.Departments.AddAsync(obj, cancellationToken);
+        await SaveAsync(cancellationToken);
+        return result.Entity;
+    }
+
+    public async Task CreateRangeAsync(IEnumerable<Department> list, CancellationToken cancellationToken)
+    {
+        await _msSqlContext.Departments.AddRangeAsync(list, cancellationToken);
+        await SaveAsync(cancellationToken);
+    }
+
+    public async Task<Department> UpdateAsync(Department obj, CancellationToken cancellationToken)
     {
         var result = _msSqlContext.Departments.Update(obj).Entity;
+        await SaveAsync(cancellationToken);
         return result;
     }
 
-    public async Task DeleteAsync(int id)
+    public async Task DeleteAsync(int id, CancellationToken cancellationToken)
     {
-        var obj = await GetAsync(id);
+        var obj = await GetAsync(id, cancellationToken);
         _msSqlContext.Departments.Remove(obj);
-        _msSqlContext.Departments.ExecuteDeleteAsync();
-
-    }
-
-    public async Task DeleteByAsync(Predicate<Department> match)
-    {
-        var forDelete = await GetListAsync(match);
-        _msSqlContext.Departments.RemoveRange(forDelete);
-        _msSqlContext.Departments.ExecuteDeleteAsync();
+        await SaveAsync(cancellationToken);
     }
 }

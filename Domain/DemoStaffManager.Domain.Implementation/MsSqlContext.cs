@@ -18,9 +18,15 @@ public class MsSqlContext : DbContext
         Database.EnsureCreated();
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public MsSqlContext(DbContextOptions<MsSqlContext> options) : base(options)
     {
-        optionsBuilder.UseSqlServer(_connectionString);
-        base.OnConfiguring(optionsBuilder);
+        Database.EnsureCreated();
     }
+    //
+    // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    // {
+    //     if(_connectionString != null)
+    //         optionsBuilder.UseSqlServer(_connectionString);
+    //     // base.OnConfiguring(optionsBuilder);
+    // }
 }

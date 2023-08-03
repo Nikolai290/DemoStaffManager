@@ -18,11 +18,11 @@ public class DepartmentController : BaseController
 
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<DepartmentOutDto>>> GetAllAsync([FromRoute] int skip,[FromRoute] int limit, CancellationToken cancellationToken)
+    public async Task<ActionResult<IEnumerable<DepartmentOutDto>>> GetAllAsync(CancellationToken cancellationToken)
     {
         try
         {
-            var result =  await _departmentService.GetAllAsync(skip, limit, cancellationToken);
+            var result =  await _departmentService.GetAllAsync(cancellationToken);
             return Ok(result);
         }
         catch (Exception e)
@@ -37,8 +37,8 @@ public class DepartmentController : BaseController
     {
         try
         {
-            await _departmentService.CreateAsync(createDto, cancellationToken);
-            return Ok();
+            var result = await _departmentService.CreateAsync(createDto, cancellationToken);
+            return Created("", result);
         }
         catch (Exception e)
         {
@@ -47,13 +47,13 @@ public class DepartmentController : BaseController
         }
     }
 
-    [HttpPut("{Id}")]
-    public async Task<ActionResult> UpdateAsync([FromRoute] int Id, [FromBody] UpdateDepartmentDto updateDto, CancellationToken cancellationToken)
+    [HttpPut("{id}")]
+    public async Task<ActionResult> UpdateAsync([FromRoute] int id, [FromBody] UpdateDepartmentDto updateDto, CancellationToken cancellationToken)
     {
         try
         {
-            await _departmentService.UpdateAsync(Id, updateDto, cancellationToken);
-            return Ok();
+            var result = await _departmentService.UpdateAsync(id, updateDto, cancellationToken);
+            return Ok(result);
         }
         catch (Exception e)
         {
@@ -62,12 +62,12 @@ public class DepartmentController : BaseController
         }
     }
     
-    [HttpDelete("{Id}")]
-    public async Task<ActionResult> DeleteAsync([FromRoute] int Id, CancellationToken cancellationToken)
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteAsync([FromRoute] int id, CancellationToken cancellationToken)
     {
         try
         {
-            await _departmentService.DeleteAsync(Id, cancellationToken);
+            await _departmentService.DeleteAsync(id, cancellationToken);
             return Ok();
         }
         catch (Exception e)

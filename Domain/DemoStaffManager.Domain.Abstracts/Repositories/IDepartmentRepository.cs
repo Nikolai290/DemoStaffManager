@@ -4,17 +4,15 @@ namespace DemoStaffManager.Domain.Abstracts.Repositories;
 
 public interface IDepartmentRepository
 {
-    Task<IEnumerable<Department>> GetListAsync(Predicate<Department> match = null, int skip = 0, int limit = 0);
+    Task<IEnumerable<Department>> GetAllAsync(CancellationToken cancellationToken = default);
 
-    Task<Department> GetAsync(int id);
+    Task<Department> GetAsync(int id, CancellationToken cancellationToken);
 
-    Department CreateAsync(Department obj);
+    Task<Department>  CreateAsync(Department obj, CancellationToken cancellationToken);
 
-    Task CreateRangeAsync(IEnumerable<Department> list);
+    Task CreateRangeAsync(IEnumerable<Department> list, CancellationToken cancellationToken);
     
-    Department Update(Department obj);
+    Task<Department> UpdateAsync(Department obj, CancellationToken cancellationToken);
 
-    Task DeleteAsync(int id);
-    
-    Task DeleteByAsync(Predicate<Department> match);
+    Task DeleteAsync(int id, CancellationToken cancellationToken);
 }

@@ -1,4 +1,6 @@
 using DemoStaffManager.Business.DataTransferObjects.AutoMapperProfiles;
+using DemoStaffManager.Domain.Implementation;
+using Microsoft.EntityFrameworkCore;
 using WebApplication.IoC;
 
 namespace DemoStaffManager.WebApplication
@@ -18,6 +20,9 @@ namespace DemoStaffManager.WebApplication
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             var allowOrigins = builder.Configuration.GetSection("AllowOrigins").Value;
+            var connectionString = builder.Configuration.GetConnectionString("MsSqlServer");
+            builder.Services.AddDbContext<MsSqlContext>(options => options.UseSqlServer(connectionString));
+            
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy(name: "DefaultPolicy",
