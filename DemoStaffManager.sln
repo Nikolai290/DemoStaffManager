@@ -7,9 +7,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Domain.Core", "Domain\DemoStaffManager.Domain.Core\DemoStaffManager.Domain.Core.csproj", "{12A27AD0-B663-4098-AA31-34883BAE20C4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9D61623E-F7E2-44AC-9AE2-DF978EBB5399}"
-	ProjectSection(SolutionItems) = preProject
-		Tests\DemoStaffManager.Core.Tests\DemoStaffManager.Core.Tests.csproj = Tests\DemoStaffManager.Core.Tests\DemoStaffManager.Core.Tests.csproj
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{D0BA61AB-83E0-4C2B-82FE-A7B8DEF8E5C8}"
 EndProject
@@ -22,6 +19,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Business.Implementation", "Business\DemoStaffManager.Business.Implementation\DemoStaffManager.Business.Implementation.csproj", "{045D3F0A-926E-4145-8EA4-33C8C125E824}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Domain.Implementation", "Domain\DemoStaffManager.Domain.Implementation\DemoStaffManager.Domain.Implementation.csproj", "{E4B0B65B-02D9-4E43-94A4-850306C32594}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{6439AC91-6B21-400D-8403-9F37FC14F86B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Busines", "Busines", "{C8FE28BF-1D49-4AB6-8233-943D5966AF49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Core.Tests", "Tests\Domain\DemoStaffManager.Core.Tests\DemoStaffManager.Core.Tests.csproj", "{6CD6A8DE-FD62-4190-A8BB-33F273DC41AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Business.DataTransferObjects.Tests", "Tests\DemoStaffManager.Business.DataTransferObjects.Tests\DemoStaffManager.Business.DataTransferObjects.Tests.csproj", "{704E71DB-D838-4204-9687-2EB6BFAB2E82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +62,14 @@ Global
 		{E4B0B65B-02D9-4E43-94A4-850306C32594}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4B0B65B-02D9-4E43-94A4-850306C32594}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4B0B65B-02D9-4E43-94A4-850306C32594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CD6A8DE-FD62-4190-A8BB-33F273DC41AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD6A8DE-FD62-4190-A8BB-33F273DC41AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CD6A8DE-FD62-4190-A8BB-33F273DC41AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CD6A8DE-FD62-4190-A8BB-33F273DC41AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{704E71DB-D838-4204-9687-2EB6BFAB2E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{704E71DB-D838-4204-9687-2EB6BFAB2E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{704E71DB-D838-4204-9687-2EB6BFAB2E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{704E71DB-D838-4204-9687-2EB6BFAB2E82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{12A27AD0-B663-4098-AA31-34883BAE20C4} = {4616AB36-E783-4878-9D16-3C683A3F7A93}
@@ -65,5 +78,9 @@ Global
 		{11EFF014-D263-434E-B1E2-8BA5E5B5CEAB} = {D0BA61AB-83E0-4C2B-82FE-A7B8DEF8E5C8}
 		{045D3F0A-926E-4145-8EA4-33C8C125E824} = {D0BA61AB-83E0-4C2B-82FE-A7B8DEF8E5C8}
 		{E4B0B65B-02D9-4E43-94A4-850306C32594} = {4616AB36-E783-4878-9D16-3C683A3F7A93}
+		{6439AC91-6B21-400D-8403-9F37FC14F86B} = {9D61623E-F7E2-44AC-9AE2-DF978EBB5399}
+		{C8FE28BF-1D49-4AB6-8233-943D5966AF49} = {9D61623E-F7E2-44AC-9AE2-DF978EBB5399}
+		{6CD6A8DE-FD62-4190-A8BB-33F273DC41AD} = {6439AC91-6B21-400D-8403-9F37FC14F86B}
+		{704E71DB-D838-4204-9687-2EB6BFAB2E82} = {C8FE28BF-1D49-4AB6-8233-943D5966AF49}
 	EndGlobalSection
 EndGlobal

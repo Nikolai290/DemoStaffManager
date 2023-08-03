@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication.Controllers;
 
-public class DepartmentController : BaseController
+[ApiController]
+[Route("api/[controller]s")]
+public class DepartmentController : ControllerBase
 {
     private readonly ILogger<DepartmentController> _logger;
     private readonly IDepartmentService _departmentService;

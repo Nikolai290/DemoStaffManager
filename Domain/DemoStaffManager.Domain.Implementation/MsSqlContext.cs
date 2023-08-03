@@ -9,7 +9,6 @@ public class MsSqlContext : DbContext
     public DbSet<Department> Departments { get; set; }
     public DbSet<Employee> Employees { get; set; }
     public DbSet<EmploymentPeriod> EmploymentPeriods { get; set; }
-    public DbSet<SalaryPeriod> SalaryPeriods { get; set; }
     
     public MsSqlContext(string connectionString)
     {
@@ -22,11 +21,13 @@ public class MsSqlContext : DbContext
     {
         Database.EnsureCreated();
     }
-    //
-    // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    // {
-    //     if(_connectionString != null)
-    //         optionsBuilder.UseSqlServer(_connectionString);
-    //     // base.OnConfiguring(optionsBuilder);
-    // }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<EmploymentPeriod>().HasKey(period => new
+        {
+            period.Start, period.EmployeeId
+        });
+        modelBuilder.Entity<Department>().HasAlternateKey(department => department.Name);
+    }
 }

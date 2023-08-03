@@ -3,7 +3,7 @@
 public record Department : BaseDbEntity
 {
     public string Name { get; init; }
-    public List<EmploymentPeriod> EmploymentPeriods { get; init; }
+    public virtual List<EmploymentPeriod> EmploymentPeriods { get; init; }
 
     public Department(string name)
     {

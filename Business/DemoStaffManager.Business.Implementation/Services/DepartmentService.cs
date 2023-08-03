@@ -25,7 +25,7 @@ public class DepartmentService : IDepartmentService
     
     public async Task<IEnumerable<DepartmentOutDto>> GetAllAsync(CancellationToken cancellationToken)
     {
-        var queryResult = await _departmentRepository.GetAllAsync(cancellationToken);
+        var queryResult = _departmentRepository.GetAllAsync(cancellationToken);
 
         var resultDtos = _mapper.Map<IEnumerable<DepartmentOutDto>>(queryResult);
         

@@ -1,3 +1,6 @@
+using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Unicode;
 using DemoStaffManager.Business.DataTransferObjects.AutoMapperProfiles;
 using DemoStaffManager.Domain.Implementation;
 using Microsoft.EntityFrameworkCore;
@@ -15,13 +18,20 @@ namespace DemoStaffManager.WebApplication
             builder.Logging.SetMinimumLevel(LogLevel.Debug);
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                .AddJsonOptions(options => new JsonSerializerOptions()
+                {
+                    Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic),
+                    WriteIndented = true
+                });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             var allowOrigins = builder.Configuration.GetSection("AllowOrigins").Value;
             var connectionString = builder.Configuration.GetConnectionString("MsSqlServer");
-            builder.Services.AddDbContext<MsSqlContext>(options => options.UseSqlServer(connectionString));
+            builder.Services.AddDbContext<MsSqlContext>(options => options
+                .UseLazyLoadingProxies()
+                .UseSqlServer(connectionString));
             
             builder.Services.AddCors(options =>
             {

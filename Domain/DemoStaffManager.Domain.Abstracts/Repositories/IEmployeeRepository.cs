@@ -1,6 +1,8 @@
-﻿namespace DemoStaffManager.Domain.Abstracts.Repositories;
+﻿using DemoStaffManager.Domain.Core.DbEntities;
 
-public interface IEmployeeRepository
+namespace DemoStaffManager.Domain.Abstracts.Repositories;
+
+public interface IEmployeeRepository : IBaseCrudRepository<Employee>
 {
-    
+
 }

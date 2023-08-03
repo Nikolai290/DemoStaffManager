@@ -1,15 +1,15 @@
 ﻿namespace DemoStaffManager.Domain.Core.DbEntities;
 
 public static class VersionablePropertyMethods {
-    public static T GetActual<T>(this IEnumerable<T> list, DateTime dateTime) where T : IVersionableByDateOnly
+    public static T GetActual<T>(this IEnumerable<T> list, DateOnly date) where T : IVersionableByDateOnly
     {
-        if (list == null || !list.Any()) 
-            throw new ArgumentNullException("Ошибка! Пустая или null последовательность.");
+        T period = default;
+        if (list == null || !list.Any())
+            return period;
         
-        var period = list.Single(item => item.Start <= DateOnly.FromDateTime(dateTime.Date) &&
+        period = list.SingleOrDefault(item => item.Start <= date &&
                                          (item.End == null ||
-                                          item.End >= DateOnly.FromDateTime(dateTime.Date)));
-        
+                                          item.End >= date));
         return period;
     }
 }

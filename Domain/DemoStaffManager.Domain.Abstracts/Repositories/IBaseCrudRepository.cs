@@ -2,27 +2,20 @@
 
 namespace DemoStaffManager.Domain.Abstracts.Repositories;
 
-public interface IBaseCrudRepository<TEntity>  where TEntity : BaseDbEntity
+public interface IBaseCrudRepository<TEntity>  where TEntity : IEntity
 {
-    // Task<IEnumerable<TEntity>> GetListAsync(Action<TEntity, bool> match = null, int skip = 0, int limit = 0);
-    //
-    // Task<TEntity> GetAsync(int Id);
-    //
-    // Task<TEntity> GetByAsync(Action<TEntity, bool> match);
-    //
-    // Task<TEntity> CreateAsync(TEntity obj);
-    //
-    // Task<IEnumerable<TEntity>> CreateRangeAsync(IEnumerable<TEntity> list);
-    //
-    // Task<TEntity> UpdateAsync(TEntity obj);
-    //
-    // Task<int> DeleteAsync(int Id);
-    //
-    // Task<int> DeleteByAsync(Action<TEntity, bool> match);
-}
-
-public interface IBaseRepository
-{
+    IQueryable<TEntity> GetAllAsync(CancellationToken cancellationToken);
+    
+    Task<TEntity> GetAsync(int id, CancellationToken cancellationToken);
+    
+    Task<TEntity> CreateAsync(TEntity obj, CancellationToken cancellationToken);
+    
+    Task CreateRangeAsync(IEnumerable<TEntity> list, CancellationToken cancellationToken);
+    
+    Task<TEntity> UpdateAsync(TEntity obj, CancellationToken cancellationToken);
+    
+    Task DeleteAsync(int id, CancellationToken cancellationToken);
+    
     Task SaveAsync(CancellationToken cancellationToken);
 
 }
