@@ -31,10 +31,9 @@ public record Employee: BaseDbEntity
     
     public string GetStartEmploymentSafely()
     {
-        // var startPeriod = GetStartEmployment();
-        // if (startPeriod == default) return default;
-        // return startPeriod.Start.ToString("O");
-        return "";
+        var startPeriod = GetStartEmployment();
+        if (startPeriod == default) return "";
+        return startPeriod.Start.ToString("O");
     }
 
     public EmploymentPeriod GetActualEmployment() => GetActualEmploymentAt(DateOnly.FromDateTime(DateTime.Now));
@@ -59,7 +58,7 @@ public record Employee: BaseDbEntity
             Department = department,
             Salary = salary,
             Start = startNewPeriod,
-            // Previous = actualPeriod
+            PreviousId = Id
         };
         
         EmploymentPeriods.Add(newPeriod);
@@ -72,14 +71,14 @@ public record Employee: BaseDbEntity
         if (actualPeriod != default) actualPeriod.ClosePeriod(date);
     }
 
-    // public EmploymentPeriod GetStartEmployment()
-    // {
-    //     if (EmploymentPeriods == null || !EmploymentPeriods.Any()) return default;
-    //     var actual = GetActualEmployment();
-    //     if (actual != default)
-    //         return actual.GetFirstPeriod();
-    //     var lastDate = EmploymentPeriods.Max(item => item.End);
-    //     var lastPeriod = EmploymentPeriods.Single(item => item.End == lastDate);
-    //     return lastPeriod.GetFirstPeriod();
-    // }
+    public EmploymentPeriod GetStartEmployment()
+    {
+        if (EmploymentPeriods == null || !EmploymentPeriods.Any()) return default;
+        var actual = GetActualEmployment();
+        if (actual != default)
+            return actual.GetFirstPeriod(EmploymentPeriods);
+        var lastDate = EmploymentPeriods.Max(item => item.End);
+        var lastPeriod = EmploymentPeriods.Single(item => item.End == lastDate);
+        return lastPeriod.GetFirstPeriod(EmploymentPeriods);
+    }
 }
