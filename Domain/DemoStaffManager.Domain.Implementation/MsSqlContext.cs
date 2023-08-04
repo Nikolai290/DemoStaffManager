@@ -25,6 +25,5 @@ public class MsSqlContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Department>().HasAlternateKey(d => d.Name);
-        modelBuilder.Entity<EmploymentPeriod>().HasAlternateKey(p => p.PreviousId);
     }
 }

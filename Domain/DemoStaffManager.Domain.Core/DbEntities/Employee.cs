@@ -58,7 +58,7 @@ public record Employee: BaseDbEntity
             Department = department,
             Salary = salary,
             Start = startNewPeriod,
-            PreviousId = Id
+            PreviousId = actualPeriod?.Id
         };
         
         EmploymentPeriods.Add(newPeriod);

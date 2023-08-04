@@ -29,8 +29,11 @@ public class DefaultMapperProfile : Profile
             .ForMember(dest => dest.EmploymentStart,
                 opt =>
                 opt.MapFrom(src => src.GetStartEmploymentSafely()));
-        
-        
+
+        CreateMap<CreateEmployeeDto, Employee>()
+            .ForMember(dest => dest.BirthDay,
+                opt => opt.MapFrom(
+                    src => DateOnly.ParseExact(src.BirthDay, "O")));
         
         CreateMap<EmploymentPeriod, EmploymentPeriodOutDto>()
             .ForMember(dest => dest.Start,
@@ -38,7 +41,7 @@ public class DefaultMapperProfile : Profile
                 src => src.Start.ToString("O")))
             .ForMember(dest => dest.End,
                 opt => opt.MapFrom(
-                    src => src.End.ToString("O")))
+                    src => src.End.HasValue ? src.End.Value.ToString("O") : ""))
             .ForMember(dest => dest.DepartmentId,
                 opt => opt.MapFrom(
                     src => src.Department.Id));

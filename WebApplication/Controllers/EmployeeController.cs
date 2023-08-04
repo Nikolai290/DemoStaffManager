@@ -1,6 +1,7 @@
 ﻿
 using DemoStaffManager.Business.Abstracts.Services;
 using DemoStaffManager.Business.DataTransferObjects.EmployeeDtos;
+using DemoStaffManager.Business.DataTransferObjects.EmploymentPeriodDtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication.Controllers;
@@ -40,6 +41,38 @@ public class EmployeeController : ControllerBase
         {
             var result = await _employeeService.CreateAsync(createDto, cancellationToken);
             return Ok(result);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+            return BadRequest(e.Message);
+        }
+    }
+
+    [HttpPost("add-period")]
+    public async Task<ActionResult> AddEmploymentPeriodAsync(CreateEmploymentPeriodDto createDto,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            await _employeeService.AddEmploymentPeriodAsync(createDto, cancellationToken);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+            return BadRequest(e.Message);
+        }
+    }
+    
+    [HttpPost("dismiss")]
+    public async Task<ActionResult> DismissAsync(DismissEmploymentPeriodDto dismissDto,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            await _employeeService.DismissAsync(dismissDto, cancellationToken);
+            return Ok();
         }
         catch (Exception e)
         {

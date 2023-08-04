@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Core.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Business.DataTransferObjects.Tests", "Tests\DemoStaffManager.Business.DataTransferObjects.Tests\DemoStaffManager.Business.DataTransferObjects.Tests.csproj", "{704E71DB-D838-4204-9687-2EB6BFAB2E82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStaffManager.Business.Implementation.Tests", "Tests\DemoStaffManager.Business.Implementation.Tests\DemoStaffManager.Business.Implementation.Tests.csproj", "{629850A1-5631-4DDF-9EE8-5D21B0C735E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{704E71DB-D838-4204-9687-2EB6BFAB2E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{704E71DB-D838-4204-9687-2EB6BFAB2E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{704E71DB-D838-4204-9687-2EB6BFAB2E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{629850A1-5631-4DDF-9EE8-5D21B0C735E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{629850A1-5631-4DDF-9EE8-5D21B0C735E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{629850A1-5631-4DDF-9EE8-5D21B0C735E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{629850A1-5631-4DDF-9EE8-5D21B0C735E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{12A27AD0-B663-4098-AA31-34883BAE20C4} = {4616AB36-E783-4878-9D16-3C683A3F7A93}
@@ -82,5 +88,6 @@ Global
 		{C8FE28BF-1D49-4AB6-8233-943D5966AF49} = {9D61623E-F7E2-44AC-9AE2-DF978EBB5399}
 		{6CD6A8DE-FD62-4190-A8BB-33F273DC41AD} = {6439AC91-6B21-400D-8403-9F37FC14F86B}
 		{704E71DB-D838-4204-9687-2EB6BFAB2E82} = {C8FE28BF-1D49-4AB6-8233-943D5966AF49}
+		{629850A1-5631-4DDF-9EE8-5D21B0C735E2} = {C8FE28BF-1D49-4AB6-8233-943D5966AF49}
 	EndGlobalSection
 EndGlobal

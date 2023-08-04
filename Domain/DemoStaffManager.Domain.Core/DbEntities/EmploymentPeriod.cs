@@ -6,12 +6,11 @@ public record EmploymentPeriod : BaseDbEntity, IVersionableByDateOnly
     public virtual Department Department { get; init; }
     public decimal Salary { get; init; }
     public DateOnly Start { get; init; }
-    public DateOnly End { get; private set; }
+    public DateOnly? End { get; private set; }
     public int? PreviousId { get; init; }
 
     public EmploymentPeriod()
     {
-        
     }
 
     public void ClosePeriod(DateOnly endPeriod)
@@ -21,7 +20,8 @@ public record EmploymentPeriod : BaseDbEntity, IVersionableByDateOnly
 
     public EmploymentPeriod GetFirstPeriod(IEnumerable<EmploymentPeriod> periods)
     {
-        if (PreviousId == null) return this;
+        if (PreviousId == null) 
+            return this;
         var previous = periods.Single(p => p.Id == PreviousId);
         return previous.GetFirstPeriod(periods);
     }

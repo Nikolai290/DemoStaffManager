@@ -47,6 +47,7 @@ namespace DemoStaffManager.WebApplication
             builder.Services.AddAutoMapper(config => config.AddProfile(typeof(DefaultMapperProfile)));
             builder.Services.AddRepositories();
             builder.Services.AddServices();
+            builder.Services.AddValidators();
 
             var app = builder.Build();
 

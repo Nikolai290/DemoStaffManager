@@ -1,3 +1,3 @@
 ﻿namespace DemoStaffManager.Business.DataTransferObjects.EmploymentPeriodDtos;
 
-public record DismissEmploymentPeriodDto(DateOnly End);
+public record DismissEmploymentPeriodDto(int EmployeeId, string End);
